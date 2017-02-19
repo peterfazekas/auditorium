@@ -17,19 +17,19 @@ public class AuditoriumLogger implements Logger{
 
     private final String fileName;
 
-    public AuditoriumLogger(final String fileName) {
+    private AuditoriumLogger(final String fileName) {
         this.fileName = fileName;
         File log = new File(fileName);
         log.delete();
     }
 
     @Override
-    public void printAllLine(List<String> lines) {
+    public void printAllLine(final List<String> lines) {
         lines.forEach(line -> println(line));
     }
 
     @Override
-    public void println(String text) {
+    public void println(final String text) {
         try (PrintWriter file = new PrintWriter(new FileWriter(PATH + fileName, true))){
             file.println(text);
         } catch (IOException e) {

@@ -10,7 +10,7 @@ public class Console {
 
     private static final String SEPARATOR = Resources.SEPARATOR;
 
-    private Scanner sc;
+    private final Scanner sc;
 
     public Console() {
         sc = new Scanner(System.in);

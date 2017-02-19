@@ -14,12 +14,12 @@ public class DataParser {
     private static final char OCCUPIED = Resources.OCCUPIED;
     private static final int FIRST_ITEM = Resources.FIRST_ITEM;
     private static final String EMPTY = Resources.EMPTY;
-    private static final int OFFSET = 1;
+    private static final int OFFSET = Resources.OFFSET;
 
-    private List<String> occupiedList;
-    private List<String> categoryList;
+    private final List<String> occupiedList;
+    private final List<String> categoryList;
 
-    public DataParser(List<String> occupiedList, List<String> categoryList) {
+    public DataParser(final List<String> occupiedList, final List<String> categoryList) {
         this.occupiedList = occupiedList;
         this.categoryList = categoryList;
     }

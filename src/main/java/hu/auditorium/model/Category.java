@@ -9,12 +9,12 @@ public enum Category {
     private int id;
     private int price;
 
-    private Category(int id, int value) {
+    Category(final int id, final int value) {
         this.id = id;
         this.price = value;
     }
 
-    public static Category setCategory(int id) {
+    public static Category setCategory(final int id) {
         for (Category category : Category.values()) {
             if(category.id == id) {
                 return category;

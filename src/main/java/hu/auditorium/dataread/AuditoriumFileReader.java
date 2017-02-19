@@ -17,7 +17,7 @@ public class AuditoriumFileReader implements Reader {
 
     private static final String PATH = Resources.PATH;
 
-    public List<String> read(String fileName) {
+    public List<String> read(final String fileName) {
         List<String> lines = new ArrayList<>();
         try (BufferedReader reader = new BufferedReader(new FileReader(PATH + fileName))) {
             lines = reader.lines().collect(Collectors.toList());

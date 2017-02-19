@@ -8,11 +8,11 @@ import hu.auditorium.service.Resources;
 public class Seat {
     private static final Character OCCUPIED = Resources.OCCUPIED;
 
-    private Position position;
-    private Category category;
-    private boolean occupied;
+    private final Position position;
+    private final Category category;
+    private final boolean occupied;
 
-    public Seat(Position position, Category category, boolean occupied) {
+    public Seat(final Position position, final Category category, final boolean occupied) {
         this.position = position;
         this.category = category;
         this.occupied = occupied;
@@ -37,7 +37,6 @@ public class Seat {
     public boolean hasRightNeighbour() {
         return position.hasRightNeighbour();
     }
-
 
     @Override
     public String toString() {

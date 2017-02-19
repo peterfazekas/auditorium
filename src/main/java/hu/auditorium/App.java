@@ -13,11 +13,12 @@ import hu.auditorium.service.DataParser;
  * @author Peter_Fazekas on 2017.02.19..
  */
 public class App {
-    private Auditorium auditorium;
-    private Reader file;
-    private Logger log;
-    private DataParser data;
-    private Console console;
+
+    private final Auditorium auditorium;
+    private final Reader file;
+    private final Logger log;
+    private final DataParser data;
+    private final Console console;
 
     public static void main(String[] args) {
         App app = new App();

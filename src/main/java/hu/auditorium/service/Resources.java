@@ -11,6 +11,7 @@ public class Resources {
     public static final String SEPARATOR = " ";
     public static final int LEFT_SIDE = 1;
     public static final int RIGHT_SIDE = 20;
+    public static final int OFFSET = 1;
 
     public static final String[] LINE = {
             "   A kiválasztott hely már foglalt.",

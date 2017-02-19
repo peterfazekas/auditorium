@@ -9,10 +9,10 @@ public class Position {
     private static final int LEFT_SIDE = Resources.LEFT_SIDE;
     private static final int RIGHT_SIDE = Resources.RIGHT_SIDE;
 
-    private int row;
-    private int column;
+    private final int row;
+    private final int column;
 
-    public Position(int row, int column) {
+    public Position(final int row, final int column) {
         this.row = row;
         this.column = column;
     }
@@ -43,7 +43,7 @@ public class Position {
     }
 
     @Override
-    public boolean equals(Object obj) {
+    public boolean equals(final Object obj) {
         if (this == obj)
             return true;
         if (obj == null)

@@ -7,6 +7,6 @@ import java.util.List;
  */
 public interface Logger {
 
-    void printAllLine(List<String> lines);
-    void println(String text);
+    void printAllLine(final List<String> lines);
+    void println(final String text);
 }
