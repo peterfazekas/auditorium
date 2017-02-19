@@ -1,9 +1,14 @@
 package hu.auditorium.model;
 
+import hu.auditorium.service.Resources;
+
 /**
  * @author Peter_Fazekas on 2017.02.19..
  */
 public class Position {
+    private static final int LEFT_SIDE = Resources.LEFT_SIDE;
+    private static final int RIGHT_SIDE = Resources.RIGHT_SIDE;
+
     private int row;
     private int column;
 
@@ -18,6 +23,14 @@ public class Position {
 
     public int getColumn() {
         return column;
+    }
+
+    public boolean hasLeftNeighbour() {
+        return column > LEFT_SIDE;
+    }
+
+    public boolean hasRightNeighbour() {
+        return column < RIGHT_SIDE;
     }
 
     @Override

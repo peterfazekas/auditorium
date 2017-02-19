@@ -13,17 +13,15 @@ import java.util.TreeMap;
  * @author Peter_Fazekas on 2017.02.19..
  */
 public class Auditorium {
-    private static final int FIRST_ITEM = DataParser.FIRST_ITEM;
+    private static final int FIRST_ITEM = Resources.FIRST_ITEM;
 
-    private List<Seat> seats;
-    private Map<Category, Integer> categoryCount;
+    private final List<Seat> seats;
+    private final Neighbor neighbor;
+    private final Map<Category, Integer> categoryCount;
 
-    public Auditorium(List<Seat> seats) {
+    public Auditorium(final List<Seat> seats) {
         this.seats = seats;
-        categoryStatistic();
-    }
-
-    private void categoryStatistic() {
+        neighbor = new Neighbor(seats);
         categoryCount = new TreeMap<>();
         seats.forEach(s -> {
             Category category = s.getCategory();
@@ -32,14 +30,15 @@ public class Auditorium {
         });
     }
 
-    public String isSeatOccupied(Position position) {
+
+    public String isSeatOccupied(final Position position) {
         Boolean occupied = null;
         for (Seat seat : seats) {
-            if(seat.getPosition().equals(position)) {
+            if (seat.getPosition().equals(position)) {
                 occupied = seat.isOccupied();
             }
         }
-        return occupied ? OutputText.LINE[0] : OutputText.LINE[1];
+        return occupied ? Resources.LINE[0] : Resources.LINE[1];
     }
 
     public String getAudienceStatistic() {
@@ -48,19 +47,19 @@ public class Auditorium {
                 .filter(i -> i.isOccupied())
                 .count();
         double percent = (double) counter * 100 / max;
-        return String.format(OutputText.LINE[2], counter, percent);
+        return String.format(Resources.LINE[2], counter, percent);
     }
 
     public String getMaxCategoryId() {
         Category maxCategory = Category.setCategory(1);
         int max = categoryCount.get(maxCategory);
         for (Map.Entry<Category, Integer> category : categoryCount.entrySet()) {
-            if(category.getValue() >= max) {
+            if (category.getValue() >= max) {
                 max = category.getValue();
                 maxCategory = category.getKey();
             }
         }
-        return String.format(OutputText.LINE[3], maxCategory.getId());
+        return String.format(Resources.LINE[3], maxCategory.getId());
     }
 
     public String getTotalPriceOfSoldTickets() {
@@ -68,8 +67,17 @@ public class Auditorium {
         for (Map.Entry<Category, Integer> category : categoryCount.entrySet()) {
             total += category.getKey().getPrice() * category.getValue();
         }
-        return String.format(OutputText.LINE[4], total);
+        return String.format(Resources.LINE[4], total);
     }
+
+    public String countSingleFreeSeats() {
+        int counter = 0;
+        for (int i = 0; i < seats.size(); i++) {
+            if(neighbor.isSingleFreeSeat(i)) counter++;
+        }
+        return String.format(Resources.LINE[5], counter);
+    }
+
 
     public List<String> getFreeSeatCategoryMap() {
         List<String> freeSeats = new ArrayList<>();
@@ -77,7 +85,7 @@ public class Auditorium {
         int row = seats.get(FIRST_ITEM).getPosition().getRow();
         for (Seat seat : seats) {
             int actualRow = seat.getPosition().getRow();
-            if(actualRow != row) {
+            if (actualRow != row) {
                 row = actualRow;
                 freeSeats.add(sb.toString());
                 sb = new StringBuilder();

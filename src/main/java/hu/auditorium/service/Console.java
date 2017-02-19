@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 public class Console {
 
-    private static final String SEPARATOR = " ";
+    private static final String SEPARATOR = Resources.SEPARATOR;
 
     private Scanner sc;
 

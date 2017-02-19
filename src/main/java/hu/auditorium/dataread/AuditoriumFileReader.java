@@ -1,5 +1,7 @@
 package hu.auditorium.dataread;
 
+import hu.auditorium.service.Resources;
+
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -13,7 +15,7 @@ import java.util.stream.Collectors;
  */
 public class AuditoriumFileReader implements Reader {
 
-    private static final String PATH = "src\\main\\resources\\";
+    private static final String PATH = Resources.PATH;
 
     public List<String> read(String fileName) {
         List<String> lines = new ArrayList<>();

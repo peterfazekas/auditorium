@@ -39,6 +39,7 @@ public class App {
         System.out.println("3. feladat: " + auditorium.getAudienceStatistic());
         System.out.println("4. feladat: " + auditorium.getMaxCategoryId());
         System.out.println("5. feladat: " + auditorium.getTotalPriceOfSoldTickets());
+        System.out.println("6. feladat: " + auditorium.countSingleFreeSeats());
         log.printAllLine(auditorium.getFreeSeatCategoryMap());
     }
 }

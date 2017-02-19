@@ -1,10 +1,12 @@
 package hu.auditorium.model;
 
+import hu.auditorium.service.Resources;
+
 /**
  * @author Peter_Fazekas on 2017.02.19..
  */
 public class Seat {
-    public static final Character OCCUPIED = 'x';
+    private static final Character OCCUPIED = Resources.OCCUPIED;
 
     private Position position;
     private Category category;
@@ -27,6 +29,15 @@ public class Seat {
     public boolean isOccupied() {
         return occupied;
     }
+
+    public boolean hasLeftNeighbour() {
+        return position.hasLeftNeighbour();
+    }
+
+    public boolean hasRightNeighbour() {
+        return position.hasRightNeighbour();
+    }
+
 
     @Override
     public String toString() {

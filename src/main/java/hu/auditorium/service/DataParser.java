@@ -11,10 +11,9 @@ import java.util.List;
  * @author Peter_Fazekas on 2017.02.19..
  */
 public class DataParser {
-    private static final char OCCUPIED = Seat.OCCUPIED;
-    public static final int FIRST_ITEM = 0;
-    public static final String EMPTY = "";
-
+    private static final char OCCUPIED = Resources.OCCUPIED;
+    private static final int FIRST_ITEM = Resources.FIRST_ITEM;
+    private static final String EMPTY = Resources.EMPTY;
     private static final int OFFSET = 1;
 
     private List<String> occupiedList;
