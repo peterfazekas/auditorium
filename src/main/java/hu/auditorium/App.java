@@ -26,7 +26,7 @@ public class App {
     }
 
     public App() {
-        log = new AuditoriumLogger("szabad.txt");
+        log = AuditoriumLogger.getInstance("szabad.txt");
         file = new AuditoriumFileReader();
         data = new DataParser(file.read("foglaltsag.txt"), file.read("kategoria.txt"));
         auditorium = new Auditorium(data.parser());

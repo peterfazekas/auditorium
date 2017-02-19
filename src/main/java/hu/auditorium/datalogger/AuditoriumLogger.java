@@ -17,6 +17,10 @@ public class AuditoriumLogger implements Logger{
 
     private final String fileName;
 
+    public static AuditoriumLogger getInstance(final String fileName) {
+        return new AuditoriumLogger(fileName);
+    }
+
     private AuditoriumLogger(final String fileName) {
         this.fileName = fileName;
         File log = new File(fileName);
@@ -36,4 +40,5 @@ public class AuditoriumLogger implements Logger{
             e.printStackTrace();
         }
     }
+
 }
