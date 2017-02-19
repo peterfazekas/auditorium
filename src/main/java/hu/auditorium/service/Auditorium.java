@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.TreeMap;
 
 /**
- * Created by Fazek on 2017.02.19..
+ * @author Peter_Fazekas on 2017.02.19..
  */
 public class Auditorium {
     private static final int FIRST_ITEM = DataParser.FIRST_ITEM;

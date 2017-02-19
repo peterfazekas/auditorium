@@ -1,7 +1,7 @@
 package hu.auditorium.model;
 
 /**
- * Created by Fazek on 2017.02.19..
+ * @author Peter_Fazekas on 2017.02.19..
  */
 public class Seat {
     public static final Character OCCUPIED = 'x';

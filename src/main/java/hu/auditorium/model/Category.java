@@ -1,7 +1,7 @@
 package hu.auditorium.model;
 
 /**
- * Created by Fazek on 2017.02.19..
+ * @author Peter_Fazekas on 2017.02.19..
  */
 public enum Category {
     FIRST(1, 5000), SECOND(2, 4000), THIRD(3, 3000), FOURTH(4, 2000), FIFTH(5, 1500);

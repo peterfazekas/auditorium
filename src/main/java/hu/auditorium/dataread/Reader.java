@@ -3,7 +3,7 @@ package hu.auditorium.dataread;
 import java.util.List;
 
 /**
- * Created by Fazek on 2017.02.19..
+ * @author Peter_Fazekas on 2017.02.19..
  */
 public interface Reader {
 

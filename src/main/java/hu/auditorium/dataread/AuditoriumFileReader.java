@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 /**
- * Created by Fazek on 2017.02.19..
+ * @author Peter_Fazekas on 2017.02.19..
  */
 public class AuditoriumFileReader implements Reader {
 

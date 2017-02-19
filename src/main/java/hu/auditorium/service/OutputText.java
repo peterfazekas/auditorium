@@ -1,7 +1,7 @@
 package hu.auditorium.service;
 
 /**
- * Created by Fazek on 2017.02.19..
+ * @author Peter_Fazekas on 2017.02.19..
  */
 public class OutputText {
     public static final String[] LINE = {
