@@ -8,23 +8,13 @@ import java.util.Scanner;
  */
 public class Console {
 
-    private static final String SEPARATOR = Resources.SEPARATOR;
-
     private final Scanner sc;
 
     public Console() {
         sc = new Scanner(System.in);
     }
 
-    public Position getPosition() {
-        String line = readLine();
-        String[] data = line.split(SEPARATOR);
-        int row = Integer.parseInt(data[0]);
-        int column = Integer.parseInt(data[1]);
-        return new Position(row, column);
-    }
-
-    private String readLine() {
+    public String readLine() {
         return sc.nextLine();
     }
 

@@ -22,7 +22,11 @@ public class AuditoriumLogger implements Logger{
     }
 
     private AuditoriumLogger(final String fileName) {
-        this.fileName = fileName;
+        this.fileName = PATH + fileName;
+        deleteFile(this.fileName);
+    }
+
+    private void deleteFile(String fileName) {
         File log = new File(fileName);
         log.delete();
     }
@@ -34,7 +38,7 @@ public class AuditoriumLogger implements Logger{
 
     @Override
     public void println(final String text) {
-        try (PrintWriter file = new PrintWriter(new FileWriter(PATH + fileName, true))){
+        try (PrintWriter file = new PrintWriter(new FileWriter(fileName, true))){
             file.println(text);
         } catch (IOException e) {
             e.printStackTrace();

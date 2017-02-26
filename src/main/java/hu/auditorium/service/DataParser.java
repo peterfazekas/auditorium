@@ -15,6 +15,7 @@ public class DataParser {
     private static final int FIRST_ITEM = Resources.FIRST_ITEM;
     private static final String EMPTY = Resources.EMPTY;
     private static final int OFFSET = Resources.OFFSET;
+    private static final String SEPARATOR = Resources.SEPARATOR;
 
     private final List<String> occupiedList;
     private final List<String> categoryList;
@@ -41,4 +42,12 @@ public class DataParser {
         return seats;
     }
 
+    public Position getPosition() {
+        Console console = new Console();
+        String line = console.readLine();
+        String[] data = line.split(SEPARATOR);
+        int row = Integer.parseInt(data[0]);
+        int column = Integer.parseInt(data[1]);
+        return new Position(row, column);
+    }
 }

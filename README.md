@@ -39,3 +39,7 @@ xxxxxxxxxxxxxxxxxxxx
 …
 </pre>
 </ol>
+<hr>
+<h3>Források:</h3>
+<li><a href="https://www.oktatas.hu/bin/content/dload/erettsegi/feladatok_2014osz_emelt/e_inf_14okt_fl.pdf">Feladatlap</a>
+<li><a href="https://www.oktatas.hu/bin/content/dload/erettsegi/feladatok_2014osz_emelt/e_inffor_14okt_fl.zip">Forrásállományok</a>

@@ -18,7 +18,6 @@ public class App {
     private final Reader file;
     private final Logger log;
     private final DataParser data;
-    private final Console console;
 
     public static void main(String[] args) {
         App app = new App();
@@ -30,12 +29,11 @@ public class App {
         file = new AuditoriumFileReader();
         data = new DataParser(file.read("foglaltsag.txt"), file.read("kategoria.txt"));
         auditorium = new Auditorium(data.parser());
-        console = new Console();
     }
 
     private void run(){
         System.out.print("2. feladat: Adjon meg egy szék pozíciót [sor oszlop]: ");
-        Position position = console.getPosition();
+        Position position = data.getPosition();
         System.out.println(auditorium.isSeatOccupied(position));
         System.out.println("3. feladat: " + auditorium.getAudienceStatistic());
         System.out.println("4. feladat: " + auditorium.getMaxCategoryId());
