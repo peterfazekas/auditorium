@@ -28,18 +28,19 @@ public class DataParser {
     public List<Seat> parser() {
         List<Seat> seats = new ArrayList<>();
         for (int row = FIRST_ITEM; row < occupiedList.size(); row++) {
-            String seatOccupancy = occupiedList.get(row);
-            String seatCategory = categoryList.get(row);
             for (int seatNumber = FIRST_ITEM; seatNumber < occupiedList.get(FIRST_ITEM).length(); seatNumber++) {
-                Position position = new Position(row + OFFSET, seatNumber + OFFSET);
-                int categoryId = Integer.parseInt(seatCategory.charAt(seatNumber) + EMPTY);
-                Category category = Category.setCategory(categoryId);
-                boolean occupied = seatOccupancy.charAt(seatNumber) == OCCUPIED;
-                Seat seat = new Seat(position, category, occupied);
-                seats.add(seat);
+                seats.add(getSeat(row, seatNumber, occupiedList.get(row), categoryList.get(row)));
             }
         }
         return seats;
+    }
+
+    private Seat getSeat(final int row, final int seatNumber, final String seatOccupancy, final String seatCategory) {
+        Position position = new Position(row + OFFSET, seatNumber + OFFSET);
+        int categoryId = Integer.parseInt(seatCategory.charAt(seatNumber) + EMPTY);
+        Category category = Category.setCategory(categoryId);
+        boolean occupied = seatOccupancy.charAt(seatNumber) == OCCUPIED;
+        return new Seat(position, category, occupied);
     }
 
     public Position getPosition() {

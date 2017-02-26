@@ -126,7 +126,7 @@ public class Auditorium {
         return splitStringByNumberOfCharacters(sb.toString(), RIGHT_SIDE);
     }
 
-    private List<String> splitStringByNumberOfCharacters(String text, int numOfCharacters) {
+    private List<String> splitStringByNumberOfCharacters(final String text, final int numOfCharacters) {
         List<String> lines = new ArrayList<>();
         int index = 0;
         while (index < text.length()) {
