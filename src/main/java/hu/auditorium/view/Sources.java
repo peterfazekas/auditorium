@@ -6,7 +6,8 @@ package hu.auditorium.view;
  */
 public enum Sources {
     OCCUPIED("foglaltsag.txt"),
-    CATEGORY("kategoria.txt");
+    CATEGORY("kategoria.txt"),
+    OUTPUT("szabad.txt");
 
     private final String source;
 

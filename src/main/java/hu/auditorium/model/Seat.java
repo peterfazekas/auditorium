@@ -1,6 +1,6 @@
 package hu.auditorium.model;
 
-import hu.auditorium.service.Resources;
+import hu.auditorium.view.Resources;
 
 /**
  * @author Peter_Fazekas on 2017.02.19..

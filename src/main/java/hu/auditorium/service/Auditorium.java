@@ -3,6 +3,7 @@ package hu.auditorium.service;
 import hu.auditorium.model.Category;
 import hu.auditorium.model.Position;
 import hu.auditorium.model.Seat;
+import hu.auditorium.view.Resources;
 
 import java.util.*;
 

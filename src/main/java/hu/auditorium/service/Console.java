@@ -1,6 +1,5 @@
 package hu.auditorium.service;
 
-import hu.auditorium.model.Position;
 import java.util.Scanner;
 
 /**

@@ -1,4 +1,4 @@
-package hu.auditorium.datalogger;
+package hu.auditorium.data.log;
 
 import java.util.List;
 

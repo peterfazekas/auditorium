@@ -1,4 +1,4 @@
-package hu.auditorium.service;
+package hu.auditorium.view;
 
 /**
  * @author Peter_Fazekas on 2017.02.19..

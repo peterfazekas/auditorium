@@ -1,4 +1,4 @@
-package hu.auditorium.dataread;
+package hu.auditorium.data.read;
 
 import java.util.List;
 

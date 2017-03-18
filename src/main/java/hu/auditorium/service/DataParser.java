@@ -1,9 +1,10 @@
 package hu.auditorium.service;
 
-import hu.auditorium.dataread.Reader;
+import hu.auditorium.data.read.Reader;
 import hu.auditorium.model.Category;
 import hu.auditorium.model.Position;
 import hu.auditorium.model.Seat;
+import hu.auditorium.view.Resources;
 import hu.auditorium.view.Sources;
 
 import java.util.ArrayList;
@@ -32,23 +33,23 @@ public class DataParser {
         List<Seat> seats = new ArrayList<>();
         for (int row = FIRST_ITEM; row < occupiedList.size(); row++) {
             for (int seatNumber = FIRST_ITEM; seatNumber < occupiedList.get(FIRST_ITEM).length(); seatNumber++) {
-                seats.add(getSeat(row, seatNumber, occupiedList.get(row), categoryList.get(row)));
+                seats.add(createSeat(row, seatNumber));
             }
         }
         return seats;
     }
 
-    private Seat getSeat(final int row, final int seatNumber, final String seatOccupancy, final String seatCategory) {
+    private Seat createSeat(final int row, final int seatNumber) {
         Position position = new Position(row + OFFSET, seatNumber + OFFSET);
+        String seatCategory = categoryList.get(row);
         int categoryId = Integer.parseInt(seatCategory.charAt(seatNumber) + EMPTY);
         Category category = Category.setCategory(categoryId);
+        String seatOccupancy = occupiedList.get(row);
         boolean occupied = seatOccupancy.charAt(seatNumber) == OCCUPIED;
         return new Seat(position, category, occupied);
     }
 
-    public Position getPosition() {
-        Console console = new Console();
-        String line = console.readLine();
+    public Position getPosition(final String line) {
         String[] data = line.split(SEPARATOR);
         int row = Integer.parseInt(data[0]);
         int column = Integer.parseInt(data[1]);

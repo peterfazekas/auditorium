@@ -1,6 +1,6 @@
-package hu.auditorium.datalogger;
+package hu.auditorium.data.log;
 
-import hu.auditorium.service.Resources;
+import hu.auditorium.view.Resources;
 
 import java.io.File;
 import java.io.FileWriter;
