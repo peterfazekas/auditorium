@@ -1,12 +1,14 @@
 package hu.auditorium.dataread;
 
 import hu.auditorium.service.Resources;
+import hu.auditorium.view.Sources;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.stream.Collectors;
 

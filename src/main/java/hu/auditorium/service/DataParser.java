@@ -1,13 +1,16 @@
 package hu.auditorium.service;
 
+import hu.auditorium.dataread.Reader;
 import hu.auditorium.model.Category;
 import hu.auditorium.model.Position;
 import hu.auditorium.model.Seat;
+import hu.auditorium.view.Sources;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * Create List of {@link Seat} from List of Strings.
  * @author Peter_Fazekas on 2017.02.19..
  */
 public class DataParser {
@@ -20,9 +23,9 @@ public class DataParser {
     private final List<String> occupiedList;
     private final List<String> categoryList;
 
-    public DataParser(final List<String> occupiedList, final List<String> categoryList) {
-        this.occupiedList = occupiedList;
-        this.categoryList = categoryList;
+    public DataParser(final Reader file) {
+        this.occupiedList = file.read(Sources.OCCUPIED.getSource());
+        this.categoryList = file.read(Sources.CATEGORY.getSource());
     }
 
     public List<Seat> parser() {

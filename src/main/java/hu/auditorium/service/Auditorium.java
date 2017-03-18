@@ -23,8 +23,10 @@ public class Auditorium {
     public Auditorium(final List<Seat> seats) {
         this.seats = seats;
         categoryCount = new TreeMap<>();
-        seats.forEach(s -> {
-            Category category = s.getCategory();
+        seats.stream()
+                .filter(i -> i.isOccupied())
+                .forEach(i -> {
+            Category category = i.getCategory();
             int value = categoryCount.containsKey(category) ? categoryCount.get(category) : 0;
             categoryCount.put(category, ++value);
         });
