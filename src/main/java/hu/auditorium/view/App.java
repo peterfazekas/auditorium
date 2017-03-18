@@ -9,7 +9,8 @@ import hu.auditorium.service.Auditorium;
 import hu.auditorium.service.DataParser;
 
 /**
- * @author Peter_Fazekas on 2017.02.19..
+ * Nézőtér - Informatika érettségi emelt szintű feladat, 2014. október.
+ * @author Peter_Fazekas on 2017.02.19.
  */
 public class App {
 
